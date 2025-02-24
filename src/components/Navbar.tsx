@@ -1,7 +1,5 @@
-import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure } from '@headlessui/react'
 import { useTheme } from '../context/ThemeContext'
 
 const navigation = [
@@ -13,12 +11,12 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Navbar({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: (value: boolean) => void }) {
+export default function Navbar() {
   const { isDark, toggleTheme } = useTheme()
 
   return (
     <Disclosure as="nav" className="fixed w-full top-0 z-50 bg-white dark:bg-zinc-900 shadow-md">
-      {({ open }) => (
+      {() => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">

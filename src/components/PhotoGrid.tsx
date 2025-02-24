@@ -29,7 +29,7 @@ export const photos = [
 
 export default function PhotoGrid() {
   const [selectedLayout, setSelectedLayout] = useState<'grid' | 'fullscreen'>('grid')
-  const { ref, inView } = useInView({
+  const { ref } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
