@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
@@ -7,13 +6,11 @@ import PhotoDetail from './components/PhotoDetail'
 import { ThemeProvider } from './context/ThemeContext'
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false)
-
   return (
     <ThemeProvider>
       <Router>
         <div className="min-h-screen">
-          <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
+          <Navbar />
           <main className="pt-16">
             <Routes>
               <Route path="/" element={<Home />} />
