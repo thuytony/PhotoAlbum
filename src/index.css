@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 24, 24, 27;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.photo-card:hover {
+  transform: scale(1.02);
+}
+
+.photo-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.photo-card:hover .photo-overlay {
+  opacity: 1;
+}
+
+@keyframes scroll {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-scroll {
+  animation: scroll 2s infinite;
+}
